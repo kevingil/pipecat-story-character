@@ -46,9 +46,9 @@ sprites = []
 
 script_dir = os.path.dirname(__file__)
 
-for i in range(1, 26):
+for i in range(1, 72):
     # Build the full path to the image file
-    full_path = os.path.join(script_dir, f"assets/anime_resized0{i}.png")
+    full_path = os.path.join(script_dir, f"assets/anime0{i}.png")
     # Get the filename without the extension to use as the dictionary key
     # Open the image and convert it to bytes
     with Image.open(full_path) as img:
@@ -126,7 +126,7 @@ async def main():
             # voice_id="gD1IexrzCvsXPHUuT0s3",
         )
 
-        llm = OpenAILLMService(api_key=os.getenv("OPENAI_API_KEY"), model="gpt-4o")
+        llm = OpenAILLMService(api_key=os.getenv("OPENAI_API_KEY"), model="gpt-4o-mini")
 
         messages = [
             {
